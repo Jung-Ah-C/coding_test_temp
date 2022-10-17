@@ -1,16 +1,16 @@
-let members = [
-  "김수한무",
-  "거북이",
-  "두루미",
-  "강아지",
-  "고양이",
-  "아무개",
-  "박씨",
-  "이씨",
-  "제임스",
-  "존",
-  "매튜",
-];
+// let members = [
+//   "김수한무",
+//   "거북이",
+//   "두루미",
+//   "강아지",
+//   "고양이",
+//   "아무개",
+//   "박씨",
+//   "이씨",
+//   "제임스",
+//   "존",
+//   "매튜",
+// ];
 
 function mix_members(members) {
   let answer = {};
@@ -74,13 +74,23 @@ function mix_members(members) {
       group[5] = parseInt(memberCnt / 5);
     }
   }
-  console.log(group);
 
   // 3. 위에서 그룹핑한 대로 객체에 담음
+  let tempArray = [];
+  for (let i = 5; i < 8; i++) {
+    for (let j = 0; j < group[i]; j++) {
+      tempArray.push(members.splice(0, i));
+    }
+  }
+
+  for (let i = 1; i < tempArray.length + 1; i++) {
+    answer[i + "조"] = tempArray[i - 1];
+  }
 
   return answer;
 }
 
+// members 리스트 요소들을 랜덤으로 섞어주는 함수
 function shuffleMembers(members) {
   let currentIndex = members.length;
   let temp = "";
