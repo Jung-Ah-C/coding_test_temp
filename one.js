@@ -1,16 +1,17 @@
-let members = [
-  "김수한무",
-  "거북이",
-  "두루미",
-  "강아지",
-  "고양이",
-  "아무개",
-  "박씨",
-  "이씨",
-  "제임스",
-  "존",
-  "매튜",
-];
+// 샘플 데이터
+// let members = [
+//   "김수한무",
+//   "거북이",
+//   "두루미",
+//   "강아지",
+//   "고양이",
+//   "아무개",
+//   "박씨",
+//   "이씨",
+//   "제임스",
+//   "존",
+//   "매튜",
+// ];
 
 function mix_members(members) {
   let answer = {};
@@ -86,7 +87,6 @@ function mix_members(members) {
   for (let i = 1; i < tempArray.length + 1; i++) {
     answer[i + "조"] = tempArray[i - 1];
   }
-
   return answer;
 }
 
